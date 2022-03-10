@@ -6,13 +6,13 @@
 
 .App {
   width: 100%;
-  height: 100vh;
+  height: 100%;
+  padding-bottom: 5%;
   background-color: hsl(235, 21%, 11%);
   background-image: url(../public/images/bg-desktop-dark.jpg);
   background-repeat: no-repeat;
   background-size: contain;
   display: flex;
-  /* align-items: center; */
   justify-content: center;
 }
 
@@ -65,19 +65,28 @@
   justify-content: center;
 }
 
-.check-mark:hover {
-  background: linear-gradient(50deg, #2f2bb4, #771c76);
+.check-mark:hover, .check-mark.checked {
+  background: linear-gradient(50deg, #55DDFF 0%, #C058F3 100%);
+}
+
+.check-mark img {
+  width: 50%;
+  display: none;
+}
+
+.check-mark.checked img, .check-mark:hover img {
+  display: flex;
 }
 
 .new-todo-input {
   flex-grow: 1;
   display: flex;
   align-items: center;
-  
+
 }
 
 #todo-input {
-  width: 100%;
+  width: 95%;
   background-color: transparent;
   border: none;
   outline: none;
@@ -121,8 +130,34 @@
   box-shadow: 0 0 7px 0 hsl(235, 21%, 11%);
 }
 
-.task-item p {
-  color: aliceblue;
+.task-text-container {
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+
+.task-text {
+  color: hsl(234, 39%, 85%);
+}
+
+.task-text.checked {
+  text-decoration: line-through;
+  color: hsl(233, 14%, 35%);
+}
+
+.remove-item {
+  margin-right: 5%;
+  opacity: 0;
+  transition: all .5s;
+}
+
+.remove-item:hover {
+  opacity: 1;
+  filter: contrast(.5);
+}
+
+.task-text-container.click {
+  background-color: red;
 }
 .task-items-info {
   width: 100%;
@@ -156,4 +191,8 @@
 .item-statuses span {
   padding: 0 4px;
   cursor: pointer;
+} 
+
+.item-statuses .active {
+  color: hsl(220, 98%, 61%);
 }
