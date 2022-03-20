@@ -20,12 +20,12 @@ import { useState, useEffect  } from 'react';
 
 
 const data = [
-  { id: 1, text: "Finish contacts hw", status: false },
-  { id: 2, text: "Study react hooks", status: false },
-  { id: 3, text: "Finish Clever programmer challenge", status: false },
-  { id: 4, text: "Run 1 mile", status: false },
-  { id: 5, text: "Finish errands", status: false },
-  { id: 6, text: "Complete Todo App", status: false },
+  { id: 1, text: "Finish Todo app redesign", status: false },
+  { id: 2, text: "Review previous recordings", status: false },
+  { id: 3, text: "Create build package", status: false },
+  { id: 4, text: "Deploy build to Netlify", status: false },
+  { id: 5, text: "Turn in Todo app redesign ", status: false },
+  { id: 6, text: "Get ready for the capstone", status: false },
 ];
 function App() {
 
@@ -61,7 +61,6 @@ function App() {
       <div className="container">
         <div className="header">
           <h1>TODO</h1>
-          <img src="./images/icon-sun.svg" alt="sun icon" />
         </div>
         {/* TaskInput component */}
         <TaskInput tasks = {tasks} setTasks = {setTasks}/>

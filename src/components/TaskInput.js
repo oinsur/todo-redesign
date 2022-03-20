@@ -31,6 +31,7 @@ export default function TaskInput({tasks, setTasks}) {
       // run the generateId function
       generateId(tasks);
       setTasks([newTask,...tasks])
+      // clear the input text
       setInput("")
     }
     // create a new todo object

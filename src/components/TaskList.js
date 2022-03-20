@@ -3,6 +3,15 @@ import FilterControl from './FilterControl'
 import Task from './Task'
 
 export default function TaskList({tasks, setTasks, filterStatus, setFilterStatus, filteredTasks, setFilteredTasks}) {
+  const clearCompleted = ()=> {
+    //Clear's Tasks by filtering out
+      setTasks(tasks.filter((task)=> !task.status))
+    //With Firebase we can delete a document
+    
+    
+    // Reset the filterStatus to all
+      setFilterStatus("all")
+  }
   return (
     <div className="task-list-wrapper">
       <div className="task-list">
@@ -24,7 +33,8 @@ export default function TaskList({tasks, setTasks, filterStatus, setFilterStatus
 
       <div className="task-items-info">
         <div className="items-left">
-          5 items left
+        {/* dynamic way to keep track of items left */}
+        {filteredTasks.length} items left
         </div>
         {/* FilterControl component */}
         <FilterControl
@@ -33,7 +43,7 @@ export default function TaskList({tasks, setTasks, filterStatus, setFilterStatus
         />
 
         <div className="items-clear">
-          <span>Clear Compelted</span>
+        <span onClick={clearCompleted}>Clear Completed</span>
         </div>
       </div>
     </div>
